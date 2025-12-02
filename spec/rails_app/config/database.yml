@@ -1,0 +1,30 @@
+default: &default
+  adapter: sqlite3
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: storage/development.sqlite3
+
+test:
+  <<: *default
+  database: storage/test.sqlite3
+
+production:
+  <<: *default
+  database: storage/production.sqlite3
+
+# PostgreSQL configuration for schema strategy integration tests
+# Start with: docker-compose up -d
+postgresql: &postgresql
+  adapter: postgresql
+  host: <%= ENV.fetch("POSTGRES_HOST") { "localhost" } %>
+  port: <%= ENV.fetch("POSTGRES_PORT") { 5433 } %>
+  database: better_tenant_test
+  username: better_tenant_test
+  password: test_password
+  pool: 5
+
+test_postgresql:
+  <<: *postgresql

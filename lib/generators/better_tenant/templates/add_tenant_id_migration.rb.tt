@@ -1,0 +1,8 @@
+# frozen_string_literal: true
+
+class Add<%= tenant_column.camelize %>To<%= table_name.camelize %> < ActiveRecord::Migration[<%= Rails::VERSION::STRING.to_f %>]
+  def change
+    add_column :<%= table_name %>, :<%= tenant_column %>, :string
+    add_index :<%= table_name %>, :<%= tenant_column %>
+  end
+end

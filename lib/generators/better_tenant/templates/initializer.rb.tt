@@ -1,0 +1,54 @@
+# frozen_string_literal: true
+
+# BetterTenant Configuration
+#
+# This initializer configures multi-tenancy for your Rails application.
+#
+BetterTenant.configure do |config|
+  # Strategy: :schema (PostgreSQL schemas) or :column (shared database with tenant_id)
+  config.strategy :<%= strategy %>
+<% if strategy == "column" %>
+
+  # The column name used to identify the tenant
+  config.tenant_column :<%= tenant_column %>
+<% end %>
+
+  # List of tenant names (can be an array or a Proc/Lambda)
+  # Static list:
+  # config.tenant_names %w[acme globex initech]
+  #
+  # Dynamic list from database:
+  # config.tenant_names -> { Tenant.pluck(:subdomain) }
+  config.tenant_names []
+
+  # Models excluded from tenancy (shared across all tenants)
+  # config.excluded_models %w[User Tenant Plan]
+  config.excluded_models []
+<% if strategy == "schema" %>
+
+  # Schemas that should always be in the search_path
+  config.persistent_schemas %w[shared public]
+
+  # Schema naming format (%{tenant} is replaced with tenant name)
+  config.schema_format "tenant_%{tenant}"
+<% end %>
+
+  # Require tenant context for all operations
+  # When true, raises TenantContextMissingError if no tenant is set
+  config.require_tenant false
+
+  # Strict mode prevents changing tenant_id on existing records
+  config.strict_mode false
+
+  # Excluded subdomains (for subdomain elevator)
+  config.excluded_subdomains %w[www admin api]
+
+  # Excluded paths (for path elevator)
+  config.excluded_paths %w[api admin assets]
+
+  # Callbacks for tenant lifecycle events
+  # config.before_create { |tenant| Rails.logger.info "Creating tenant: #{tenant}" }
+  # config.after_create { |tenant| Rails.logger.info "Created tenant: #{tenant}" }
+  # config.before_switch { |from, to| Rails.logger.info "Switching from #{from} to #{to}" }
+  # config.after_switch { |from, to| Rails.logger.info "Switched to #{to}" }
+end
