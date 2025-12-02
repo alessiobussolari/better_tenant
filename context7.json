@@ -1,0 +1,19 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "BetterTenant",
+  "description": "Multi-tenancy for Rails 8.1+ with schema and column strategies",
+  "folders": ["context7", "docs", "guide"],
+  "excludeFolders": ["spec", "tmp", "vendor", "node_modules", "pkg", ".git", "coverage"],
+  "excludeFiles": ["*.lock", "*.log"],
+  "rules": [
+    "Use BetterTenant::Tenant.switch(tenant) { } for block-scoped tenant context",
+    "Include BetterTenant::ActiveRecordExtension in tenanted models (column strategy)",
+    "Include BetterTenant::ActiveJobExtension in jobs requiring tenant context",
+    "Configure strategy as :column (shared DB) or :schema (PostgreSQL schemas)",
+    "Use middleware for automatic tenant detection: BetterTenant::Middleware with elevator",
+    "Available elevators: :subdomain, :domain, :header, :path, or custom Proc",
+    "Schema strategy requires excluded_models for models in public schema",
+    "Use tenant_model config for automatic tenant_names from database",
+    "Callbacks: before_create, after_create, before_switch, after_switch"
+  ]
+}

@@ -1,0 +1,81 @@
+# Ruby/Bundler
+/.bundle/
+/vendor/bundle/
+*.gem
+Gemfile.lock
+
+# Documentation
+/doc/
+/.yardoc/
+/_yardoc/
+
+# Build artifacts
+/pkg/
+/tmp/
+/log/
+*.log
+
+# Test artifacts
+/coverage/
+/spec/reports/
+.rspec_status
+
+# Test Rails app
+/spec/rails_app/db/*.sqlite3
+/spec/rails_app/db/*.sqlite3-*
+/spec/rails_app/log/
+/spec/rails_app/storage/
+/spec/rails_app/tmp/
+
+# Docker
+docker-compose.override.yml
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+.directory
+
+# IDEs
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+*.iml
+
+# Editor swap/backup files
+*.swp
+*.swo
+*.bak
+*~
+\#*\#
+.#*
+
+# Claude Code / AI assistants
+.claude/
+.claude-*
+.anthropic/
+.cursor/
+.aider*
+.continue/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Debug
+.byebug_history
+.pry_history
