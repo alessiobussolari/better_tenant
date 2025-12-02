@@ -142,9 +142,20 @@ rake better_tenant:drop[tenant_name]
 # Run migrations for all tenants
 rake better_tenant:migrate
 
+# Rollback migrations for all tenants
+rake better_tenant:rollback
+
+# Seed all tenants
+rake better_tenant:seed
+
+# Open console in tenant context
+rake better_tenant:console[tenant_name]
+
 # Run a task for each tenant
 rake better_tenant:each[task_name]
 ```
+
+See [Rake Tasks Documentation](docs/10-rake-tasks.md) for complete details.
 
 ## 📖 Usage
 
@@ -372,6 +383,25 @@ end
 | `:header` | `X-Tenant` header value |
 | `:path` | `/acme/articles` -> `"acme"` |
 | `Proc` | Custom extraction logic |
+
+## 📖 Documentation
+
+Complete documentation is available in the [docs](docs/) folder:
+
+- [Getting Started](docs/01-getting-started.md)
+- [Configuration](docs/02-configuration.md)
+- [Column Strategy](docs/03-column-strategy.md)
+- [Schema Strategy](docs/04-schema-strategy.md)
+- [Middleware & Elevators](docs/05-middleware.md)
+- [ActiveJob Integration](docs/06-activejob.md)
+- [Callbacks](docs/07-callbacks.md)
+- [API Reference](docs/08-api-reference.md)
+- [Testing Guide](docs/09-testing.md)
+- [Rake Tasks](docs/10-rake-tasks.md)
+- [Generators](docs/11-generators.md)
+- [Troubleshooting & FAQ](docs/12-troubleshooting.md)
+- [Audit Logging](docs/13-audit-logging.md)
+- [Centralized Login](docs/14-centralized-login.md)
 
 ## 🧪 Testing
 

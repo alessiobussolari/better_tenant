@@ -12,6 +12,12 @@ Complete documentation for BetterTenant multi-tenancy gem.
 6. [ActiveJob Integration](06-activejob.md)
 7. [Callbacks](07-callbacks.md)
 8. [API Reference](08-api-reference.md)
+9. [Testing](09-testing.md)
+10. [Rake Tasks](10-rake-tasks.md)
+11. [Generators](11-generators.md)
+12. [Troubleshooting & FAQ](12-troubleshooting.md)
+13. [Audit Logging](13-audit-logging.md)
+14. [Centralized Login](14-centralized-login.md)
 
 ## Quick Links
 
@@ -22,6 +28,10 @@ Complete documentation for BetterTenant multi-tenancy gem.
 - [Schema Strategy Setup](04-schema-strategy.md#basic-setup)
 - [Middleware Configuration](05-middleware.md#setup)
 - [Background Jobs](06-activejob.md#usage)
+- [Testing Guide](09-testing.md)
+- [Rake Tasks Reference](10-rake-tasks.md)
+- [Troubleshooting](12-troubleshooting.md)
+- [Centralized Login](14-centralized-login.md)
 
 ## Overview
 
